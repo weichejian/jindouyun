@@ -1,0 +1,257 @@
+html{
+    height: 100%;
+}
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.toolbar {
+  -webkit-box-sizing: border-box;
+  background: #ff7300;
+  border-bottom: 1px solid #e1e1e1;
+  height: 50px;
+  padding: 5px;
+  position: relative;
+}
+body {
+  -webkit-perspective: 800;
+  -webkit-text-size-adjust: none;
+  -webkit-transform-style: preserve-3d;
+  -webkit-user-select: none;
+  font-family: Helvetica;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+body > section {
+  display: block;
+  height: 0;
+  width: 100%;
+  -webkit-transform: translate3d(100%,0%,0%);
+  opacity: 0;
+  -webkit-transition: all 0.25s ease-in-out;
+  -webkit-transform-style: preserve-3d;
+  z-index: -10;
+}
+
+.reverse {
+  -webkit-transform: translate3d(-100%, 0%, 0%);
+  opacity: 0;
+  height: 0;
+}
+
+.current {
+  -webkit-transform: translate3d(0%,0%, 0%);
+  opacity: 1;
+  z-index: 1;
+}
+h1, h2 {
+  color: #4C566C;
+  font: normal normal bold 18px/normal Helvetica;
+  margin: 10px 20px 6px;
+  text-shadow: rgba(255, 255, 255, 0.19)
+}
+
+.toolbar > h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  margin: 1px 15px 0px 15px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  text-shadow: rgba(0, 0, 0, 0.398438) 0px -1px 0px;
+  white-space: nowrap;
+}
+.toolbar > h1 > input{
+  height: 30px;
+  border-radius: 5px;
+  padding-left: 5px;
+}
+
+ul li {
+  color: black;
+  font-size: 14px;
+  color: #666;
+  list-style-type: none;
+  padding: 10px;
+}
+
+li:first-child, li:first-child a {
+  border-top: 0px;
+  border-top-left-radius: 8px 8px;
+  border-top-right-radius: 8px 8px;
+}
+
+body > .current {
+    height: 100% !important;
+  /*display: block !important;*/
+}
+
+
+ul li a, li.img a + a {
+  color: black;
+  display: block;
+  margin: -10px;
+  overflow: hidden;
+  padding: 12px 10px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.button, .back, .cancel, .add {
+background: none;
+border-width: 0px 5px;
+color: white;
+font-family: inherit;
+font-size: 12px;
+font-weight: bold;
+height: 30px;
+line-height: 30px;
+margin: 0px;
+overflow: ;
+padding: 0px 3px;
+position: absolute;
+right: 6px;
+text-decoration: none;
+text-overflow: ellipsis;
+text-shadow: rgba(0, 0, 0, 0.496094) 0px -1px 0px;
+top: 8px;
+white-space: nowrap;
+width: auto;
+}
+
+.back {
+border-width: 0px 8px 0px 14px;
+left: 6px;
+max-width: 55px;
+padding: 0px;
+right: auto;
+font-size: 16px;
+}
+
+.ui.divider {
+    margin: 1rem 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    line-height: 1;
+    height: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.red{
+  color: #ff7300;
+}
+.green{
+  color: green;
+}
+.status{
+  padding: 3px;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 5px;
+  background: #ff7300;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.status.open{
+  background: #ff7300;
+  color: #fff;
+}
+.status.pause{
+  background: #999;
+  color: #666;
+}
+
+#areaSelectBtn{
+  position: absolute;
+  right: 6px;
+  top: 10px;
+  display: block;
+  background: #fff;
+  color: #333;
+  padding: 7px;
+  font-size: 12px;
+  font-weight: normal;
+  border-radius: 5px;
+  line-height: 20px;
+
+}
+.shopDetail{
+  background: #fff;
+}
+
+.shopStatus{
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.menuContentWrapper{
+    height: 100%;
+    position: relative;
+}
+
+.menuTab{
+    width: 90px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-right: 1px solid #666;
+    z-index: 10;
+}
+.menuTab .menuTabItem{
+    background: #e1e1e1;
+    line-height: 1.5;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid #666;
+}
+.menuTab .menuTabItem.active{
+    background: #fff;
+    color: #ff7300;
+}
+.menuTabContent{
+    width: 100%;
+    padding-left: 90px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.menuTabContent .tab{
+    display: none;
+}
+.menuTabContent .tab .menuItem{
+    border-bottom: 1px solid #666;
+    padding: 10px;
+    position: relative;
+
+}
+.menuTabContent .tab .menuItem .addBtn{
+    background: #ff7300;
+    color: #fff;
+    border-radius: 90px;
+    font-size: 16px;
+    position: absolute;
+    right: 100px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    z-index: 10;
+}
+.menuTabContent .tab.active{
+    display: block;
+}
